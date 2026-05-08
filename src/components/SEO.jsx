@@ -49,6 +49,8 @@ export default function SEO({
     setMeta("robots", "index, follow");
     setMeta("author", "NorthStar Interior Design (NSID)");
     setMeta("theme-color", "#030712");
+    setMeta("viewport", "width=device-width, initial-scale=1, maximum-scale=5");
+    setMeta("format-detection", "telephone=no");
     if (canonical) setLink("canonical", canonical);
 
     // JSON-LD
@@ -92,8 +94,8 @@ export const schemas = {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 23.7937,
-      longitude: 90.4066,
+      latitude: 23.8759,
+      longitude: 90.3795,
     },
     telephone: "+880-1816-072106",
     email: "nstar.interior@gmail.com",
@@ -106,11 +108,17 @@ export const schemas = {
       },
     ],
     areaServed: [
-      "Gulshan",
-      "Banani",
-      "Dhanmondi",
-      "Baridhara",
+      "Rangpur",
+      "Rajshahi",
+      "Chittagong",
+      "Khulna",
       "Dhaka",
+      "Gazipur",
+      "Sylhet",
+      "Comilla",
+      "Narayanganj",
+      "Barisal",
+      "Uttara",
       "Bangladesh",
     ],
     priceRange: "$$$$",

@@ -4,7 +4,7 @@ import SplitText from "../SplitText";
 export default function Manifesto() {
   const ref = useReveal();
   return (
-    <section className="relative py-24 lg:py-40 px-6 lg:px-10">
+    <section className="relative py-32 lg:py-48 px-6 lg:px-10">
       <div className="mx-auto max-w-[1300px]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-3">

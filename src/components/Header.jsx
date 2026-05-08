@@ -26,37 +26,41 @@ export default function Header() {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          scrolled ? "py-3" : "py-6",
+          scrolled ? "py-4 lg:py-3" : "py-8 lg:py-6",
         )}
         style={{
           backdropFilter: scrolled ? "blur(24px) saturate(140%)" : "blur(0)",
           WebkitBackdropFilter: scrolled
             ? "blur(24px) saturate(140%)"
             : "blur(0)",
-          background: scrolled ? "rgba(3,7,18,0.55)" : "transparent",
+          background: scrolled ? "rgba(3,7,18,0.7)" : "transparent",
           borderBottom: scrolled
-            ? "1px solid rgba(255,255,255,0.06)"
+            ? "1px solid rgba(255,255,255,0.08)"
             : "1px solid transparent",
         }}
       >
         <div className="mx-auto max-w-[1500px] px-6 lg:px-10 flex items-center justify-between">
-          <a href="/" data-cursor="" className="flex items-center gap-3 group">
+          <a href="/" data-cursor="" className="flex items-center gap-3 group relative z-10">
             <div
-              className="w-9 h-9 rounded-full flex items-center justify-center overflow-hidden"
+              className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:rounded-2xl group-hover:rotate-3"
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(212,175,55,0.25), rgba(15,118,110,0.25))",
-                border: "1px solid rgba(212,175,55,0.4)",
+                background: "rgba(255, 255, 255, 0.03)",
+                border: "1px solid rgba(255, 255, 255, 0.08)",
+                boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)"
               }}
             >
-              <img src="/n.png" alt="NSID logo" className="w-full h-full object-contain p-1" />
+              <img 
+                src="/n.png" 
+                alt="NSID logo" 
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" 
+              />
             </div>
-            <div className="leading-none">
-              <div className="font-display text-base text-[#F8FAFC] tracking-wide">
+            <div className="leading-none flex flex-col justify-center">
+              <div className="font-display text-sm lg:text-lg text-[#F8FAFC] tracking-wide font-medium">
                 নর্থস্টার ইন্টেরিয়র ডিজাইন
               </div>
-              <div className="text-[10px] uppercase tracking-[0.25em] text-white/40 mt-1">
-                NSID
+              <div className="text-[9px] lg:text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] mt-1 font-semibold opacity-80 group-hover:opacity-100 transition-opacity">
+                NSID · Dhaka
               </div>
             </div>
           </a>
@@ -102,54 +106,79 @@ export default function Header() {
       {/* Mobile drawer */}
       <div
         className={cn(
-          "fixed inset-0 z-[60] lg:hidden transition-all duration-500",
+          "fixed inset-0 z-[60] lg:hidden transition-all duration-700",
           open ? "pointer-events-auto" : "pointer-events-none",
         )}
         style={{
-          background: open ? "rgba(3,7,18,0.92)" : "transparent",
-          backdropFilter: open ? "blur(28px)" : "blur(0)",
-          WebkitBackdropFilter: open ? "blur(28px)" : "blur(0)",
+          background: open ? "rgba(3,7,18,0.96)" : "transparent",
+          backdropFilter: open ? "blur(32px)" : "blur(0)",
+          WebkitBackdropFilter: open ? "blur(32px)" : "blur(0)",
           opacity: open ? 1 : 0,
         }}
       >
-        <div className="flex items-center justify-between px-6 py-6">
-          <a href="/" className="font-display text-[#F8FAFC]">
-            NSID
+        <div className="flex items-center justify-between px-6 py-8">
+          <a href="/" className="font-display text-[#F8FAFC] flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 bg-white/5">
+              <img src="/n.png" alt="NSID" className="w-full h-full object-contain" />
+            </div>
+            <span className="text-lg tracking-wider">NSID</span>
           </a>
           <button
             type="button"
             aria-label="Close menu"
             onClick={() => setOpen(false)}
-            className="w-11 h-11 rounded-full glass flex items-center justify-center"
+            className="w-12 h-12 rounded-full glass flex items-center justify-center transition-transform hover:rotate-90 active:scale-90"
           >
-            <X size={18} className="text-white" />
+            <X size={20} className="text-white" />
           </button>
         </div>
-        <nav className="px-8 pt-12 flex flex-col gap-2">
+        
+        <nav className="px-8 pt-16 flex flex-col gap-6">
           {NAV.map((item, i) => (
             <a
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="text-display-lg text-[#F8FAFC] py-3 border-b border-white/8"
+              className="group flex items-center justify-between"
               style={{
                 opacity: open ? 1 : 0,
-                transform: open ? "translateY(0)" : "translateY(20px)",
-                transition: `opacity 0.6s ease ${i * 0.06}s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${i * 0.06}s`,
+                transform: open ? "translateY(0)" : "translateY(30px)",
+                transition: `opacity 0.7s ease ${i * 0.08}s, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${i * 0.08}s`,
               }}
             >
-              {item.label}
+              <span className="text-4xl font-display text-[#F8FAFC] group-hover:text-[#D4AF37] transition-colors">
+                {item.label}
+              </span>
+              <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#D4AF37] transition-colors">
+                <ArrowUpRight size={14} className="text-white/40 group-hover:text-[#D4AF37]" />
+              </div>
             </a>
           ))}
         </nav>
-        <div className="absolute bottom-8 left-0 right-0 px-8">
+
+        <div 
+            className="absolute bottom-12 left-8 right-8 flex flex-col gap-8"
+            style={{
+                opacity: open ? 1 : 0,
+                transition: "opacity 1s ease 0.5s"
+            }}
+        >
           <a
             href="/contact"
             onClick={() => setOpen(false)}
-            className="block text-center w-full py-4 rounded-full bg-[#D4AF37] text-[#030712] font-medium uppercase tracking-wider text-sm"
+            className="block text-center w-full py-5 rounded-full bg-[#D4AF37] text-[#030712] font-semibold uppercase tracking-widest text-xs transition-transform active:scale-95 shadow-xl shadow-[#D4AF37]/10"
           >
             Book Consultation
           </a>
+          <div className="flex justify-between items-center px-2">
+            <div className="text-[10px] uppercase tracking-[0.2em] text-white/30">
+                Dhaka · Bangladesh
+            </div>
+            <div className="flex gap-4">
+                <span className="w-8 h-px bg-white/10" />
+                <span className="w-8 h-px bg-white/10" />
+            </div>
+          </div>
         </div>
       </div>
     </>

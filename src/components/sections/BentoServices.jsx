@@ -99,7 +99,7 @@ export default function BentoServices() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 lg:auto-rows-[220px] gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 lg:auto-rows-[220px] gap-4">
           {SERVICES.map((s, i) => (
             <ServiceCard key={s.title} service={s} delay={i * 100} />
           ))}

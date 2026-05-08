@@ -3,7 +3,11 @@
  * from DOM elements.
  */
 
-import { type GetStyleInfo, initDesignMode } from '../../../../shared/design-mode';
+// Stubbed — the shared/design-mode package isn't available in this standalone project.
+type StyleResult = { className: string; styles: Record<string, string> | null };
+type Resolved = { element: Element };
+type GetStyleInfo = (resolved: Resolved) => StyleResult;
+const initDesignMode = (_fn: GetStyleInfo) => () => {};
 
 function rgbToHex(rgb: string): string {
   const match = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*[\d.]+)?\)$/);

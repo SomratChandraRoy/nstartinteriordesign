@@ -17,7 +17,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-end overflow-hidden"
+      className="relative min-h-screen min-h-[100dvh] flex items-center lg:items-end overflow-hidden"
       style={{
         background: "radial-gradient(ellipse at top, #0F172A 0%, #030712 70%)",
       }}
@@ -31,12 +31,12 @@ export default function Hero() {
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(3,7,18,0.4) 0%, rgba(3,7,18,0.1) 30%, rgba(3,7,18,0.6) 75%, #030712 100%)",
+            "linear-gradient(180deg, rgba(3,7,18,0.5) 0%, rgba(3,7,18,0.2) 30%, rgba(3,7,18,0.7) 75%, #030712 100%)",
         }}
       />
 
       {/* Top eyebrow row */}
-      <div className="absolute top-0 inset-x-0 z-10 pt-28 lg:pt-36 px-6 lg:px-10">
+      <div className="absolute top-0 inset-x-0 z-10 pt-24 lg:pt-36 px-6 lg:px-10">
         <div className="mx-auto max-w-[1500px] flex items-start justify-between gap-6">
           <div
             ref={fadeRef}
@@ -46,7 +46,7 @@ export default function Hero() {
               className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"
               style={{ animation: "pulse-gold 2s ease-in-out infinite" }}
             />
-            <span className="text-[10px] uppercase tracking-[0.25em] text-white/70">
+            <span className="text-[9px] lg:text-[10px] uppercase tracking-[0.25em] text-white/70">
               Now Accepting · 2026 Commissions
             </span>
           </div>
@@ -63,10 +63,10 @@ export default function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 mx-auto max-w-[1500px] w-full px-6 lg:px-10 pb-16 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+      <div className="relative z-10 mx-auto max-w-[1500px] w-full px-6 lg:px-10 pt-32 pb-16 lg:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center lg:items-end">
           <div className="lg:col-span-9">
-            <h1 className="text-display-hero font-display text-[#F8FAFC]">
+            <h1 className="text-[3.5rem] md:text-[6rem] lg:text-display-hero font-display text-[#F8FAFC] leading-[1.1] lg:leading-[0.95]">
               <SplitText
                 text="Designing the"
                 mode="word"
@@ -84,9 +84,9 @@ export default function Hero() {
             </h1>
           </div>
 
-          <div className="lg:col-span-3 flex flex-col gap-6">
+          <div className="lg:col-span-3 flex flex-col gap-8">
             <p
-              className="text-white/65 text-[15px] leading-relaxed max-w-sm fade-up"
+              className="text-white/65 text-[15px] lg:text-[16px] leading-relaxed max-w-sm fade-up"
               style={{ transitionDelay: "0.9s" }}
               ref={(el) => {
                 if (!el) return;
@@ -99,7 +99,7 @@ export default function Hero() {
             </p>
 
             <div
-              className="flex flex-wrap items-center gap-3 fade-up"
+              className="flex flex-wrap items-center gap-4 fade-up"
               ref={(el) => {
                 if (!el) return;
                 setTimeout(() => el.classList.add("in"), 1100);
@@ -120,7 +120,7 @@ export default function Hero() {
         </div>
 
         {/* Bottom strip */}
-        <div className="mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 border-t border-white/10 pt-8">
+        <div className="mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6 border-t border-white/10 pt-10">
           {[
             { value: "142", label: "Completed Commissions" },
             { value: "11", label: "Years in Practice" },
