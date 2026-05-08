@@ -33,6 +33,7 @@ import { serializeError } from 'serialize-error';
 import { Toaster, toast } from 'sonner';
 import { useDevServerHeartbeat } from '../__create/useDevServerHeartbeat';
 import '../__create/design-mode';
+import Preloader from '../components/Preloader';
 import type { Route } from './+types/root';
 
 export const links = () => [];
@@ -446,6 +447,7 @@ export function Layout({ children }: { children: ReactNode }) {
         {LoadFontsSSR ? <LoadFontsSSR /> : null}
       </head>
       <body>
+        <Preloader />
         <ClientOnly loader={() => children} />
         <Toaster position={isMobile ? 'top-center' : 'bottom-right'} />
         <ScrollRestoration />
