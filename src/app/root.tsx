@@ -33,7 +33,8 @@ import { serializeError } from 'serialize-error';
 import { Toaster, toast } from 'sonner';
 import { useDevServerHeartbeat } from '../__create/useDevServerHeartbeat';
 import '../__create/design-mode';
-import Preloader from '../components/Preloader';
+// @ts-expect-error -- untyped jsx component
+import Preloader from '@/components/Preloader.jsx';
 import type { Route } from './+types/root';
 
 export const links = () => [];
