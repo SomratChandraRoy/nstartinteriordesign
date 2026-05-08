@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 
-const PHONE = "8801711000000"; // BD format, no plus
+const PHONE = "8801816072106"; // BD format, no plus
 
 export default function WhatsAppFAB() {
   const [open, setOpen] = useState(false);

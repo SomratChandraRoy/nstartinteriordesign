@@ -79,11 +79,11 @@ export const schemas = {
   organization: () => ({
     "@context": "https://schema.org",
     "@type": "InteriorDesignBusiness",
-    name: "NorthStar Interior Design (NSID)",
+    name: "নর্থস্টার ইন্টেরিয়র ডিজাইন (NSID)",
     url: "https://nsid.bd",
     logo: "https://nsid.bd/n.png",
     description:
-      "Interior design studio based in Dhaka, Bangladesh, specializing in residential and corporate interiors.",
+      "নর্থস্টার ইন্টেরিয়র ডিজাইন (NSID) is a premier interior design studio based in Dhaka, Bangladesh, specializing in luxury residential and corporate interiors across all major divisions.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "House #87, Road #15, Sector #11",
